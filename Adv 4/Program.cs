@@ -85,6 +85,13 @@ namespace Adv_4
             return missing;
         }
         #endregion
+
+        #region Q9 Unique Values with HashSet
+        static HashSet<int> GetUniqueValues(List<int> nums)
+        {
+            return new HashSet<int>(nums);
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -145,6 +152,12 @@ namespace Adv_4
             int[] arrQ8 = { 2, 3, 7, 4, 9 };
             var missing = FindMissingNumbers(arrQ8, 10);
             Console.WriteLine("Missing: " + string.Join(", ", missing));
+            #endregion
+
+            #region Q9 Unique Values with HashSet
+            var numsQ9 = new List<int> { 1, 2, 2, 3, 4, 4 };
+            var unique = GetUniqueValues(numsQ9);
+            Console.WriteLine("Unique: " + string.Join(", ", unique));
             #endregion
         }
     }
