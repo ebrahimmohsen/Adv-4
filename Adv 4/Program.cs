@@ -68,7 +68,13 @@ namespace Adv_4
         }
         #endregion
 
-        
+        #region Q5 Check if Array Contains Duplicates
+        static bool ContainsDuplicates(int[] arr)
+        {
+            return arr.Length != arr.Distinct().Count();
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -102,6 +108,10 @@ namespace Adv_4
                 Console.WriteLine($"[{string.Join(", ", group)}]");
             #endregion
 
+            #region Q5 Check if Array Contains Duplicates
+            int[] arrQ5 = { 1, 2, 3, 1 };
+            Console.WriteLine("Contains duplicates: " + ContainsDuplicates(arrQ5));
+            #endregion
         }
     }
 }
