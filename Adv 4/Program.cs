@@ -52,6 +52,23 @@ namespace Adv_4
             if (!found) Console.WriteLine("Key not found");
         }
         #endregion
+
+        #region Q4 Group Anagrams
+        static List<List<string>> GroupAnagrams(string[] strs)
+        {
+            var dict = new Dictionary<string, List<string>>();
+            foreach (string s in strs)
+            {
+                string sorted = new string(s.OrderBy(c => c).ToArray());
+                if (!dict.ContainsKey(sorted))
+                    dict[sorted] = new List<string>();
+                dict[sorted].Add(s);
+            }
+            return dict.Values.ToList();
+        }
+        #endregion
+
+        
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -77,6 +94,14 @@ namespace Adv_4
             };
             FindKeysForValue(tableQ3, "apple");
             #endregion
+
+            #region Q4 Group Anagrams
+            string[] strsQ4 = { "eat", "tea", "tan", "ate", "nat", "bat" };
+            var grouped = GroupAnagrams(strsQ4);
+            foreach (var group in grouped)
+                Console.WriteLine($"[{string.Join(", ", group)}]");
+            #endregion
+
         }
     }
 }
