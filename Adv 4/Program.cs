@@ -119,6 +119,12 @@ namespace Adv_4
         }
         #endregion
 
+        #region Q13 Find Elements Greater Than Target in SortedSet
+        static List<int> ElementsGreaterThanTarget(SortedSet<int> set, int target)
+        {
+            return set.Where(n => n > target).ToList();
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -216,6 +222,12 @@ namespace Adv_4
                 {"airport",3}
             };
             Console.WriteLine("Keys starting with 'a': " + CountKeysStartingWith(dictQ12, 'a'));
+            #endregion
+
+            #region Q13 Find Elements Greater Than Target in SortedSet
+            var sortedSetQ13 = new SortedSet<int> { 1, 3, 5, 7, 9 };
+            var greaterList = ElementsGreaterThanTarget(sortedSetQ13, 4);
+            Console.WriteLine("Greater than 4: " + string.Join(", ", greaterList));
             #endregion
         }
     }
