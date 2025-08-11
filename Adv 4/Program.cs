@@ -111,6 +111,14 @@ namespace Adv_4
             return union;
         }
         #endregion
+
+        #region Q12 Count Keys Starting with TargetChar
+        static int CountKeysStartingWith(Dictionary<string, int> dict, char targetChar)
+        {
+            return dict.Keys.Count(k => k.StartsWith(targetChar.ToString()));
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -198,6 +206,16 @@ namespace Adv_4
                 union.UnionWith(set2);
                 return union;
             }
+            #endregion
+
+            #region Q12 Count Keys Starting with TargetChar
+            var dictQ12 = new Dictionary<string, int>
+            {
+                {"apple",1},
+                {"animal",2},
+                {"airport",3}
+            };
+            Console.WriteLine("Keys starting with 'a': " + CountKeysStartingWith(dictQ12, 'a'));
             #endregion
         }
     }
