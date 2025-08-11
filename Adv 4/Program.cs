@@ -92,6 +92,16 @@ namespace Adv_4
             return new HashSet<int>(nums);
         }
         #endregion
+
+        #region Q10  Swap Keys and Values in Hashtable
+        static Hashtable SwapKeysAndValues(Hashtable table)
+        {
+            var swapped = new Hashtable();
+            foreach (DictionaryEntry entry in table)
+                swapped[entry.Value] = entry.Key;
+            return swapped;
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -158,6 +168,18 @@ namespace Adv_4
             var numsQ9 = new List<int> { 1, 2, 2, 3, 4, 4 };
             var unique = GetUniqueValues(numsQ9);
             Console.WriteLine("Unique: " + string.Join(", ", unique));
+            #endregion
+
+            #region Q10 Swap Keys and Values in Hashtable
+            Hashtable tableQ10 = new Hashtable()
+            {
+                { "A", 1 },
+                { "B", 2 },
+                { "C", 3 }
+            };
+            var swapped = SwapKeysAndValues(tableQ10);
+            foreach (DictionaryEntry entry in swapped)
+                Console.WriteLine($"{entry.Key} : {entry.Value}");
             #endregion
         }
     }
