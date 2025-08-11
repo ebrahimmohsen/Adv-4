@@ -125,6 +125,16 @@ namespace Adv_4
             return set.Where(n => n > target).ToList();
         }
         #endregion
+
+        #region Q14 Keys with Even Values in SortedList
+        static List<int> KeysWithEvenValues(SortedList<int, int> list)
+        {
+            return list.Where(kv => kv.Value % 2 == 0)
+                       .Select(kv => kv.Key)
+                       .ToList();
+        }
+        #endregion
+    
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -229,7 +239,20 @@ namespace Adv_4
             var greaterList = ElementsGreaterThanTarget(sortedSetQ13, 4);
             Console.WriteLine("Greater than 4: " + string.Join(", ", greaterList));
             #endregion
+
+            #region Q14 Keys with Even Values in SortedList
+            var sortedListQ14 = new SortedList<int, int>
+            {
+                {1, 10},
+                {2, 15},
+                {3, 20}
+            };
+            var evenKeys = KeysWithEvenValues(sortedListQ14);
+            Console.WriteLine("Keys with even values: " + string.Join(", ", evenKeys));
+            #endregion
         }
     }
+    
 }
+
 
