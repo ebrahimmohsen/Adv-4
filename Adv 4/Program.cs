@@ -75,6 +75,16 @@ namespace Adv_4
         }
         #endregion
 
+        #region Q8 Find Missing Numbers from 1 to N
+        static List<int> FindMissingNumbers(int[] arr, int N)
+        {
+            var set = new HashSet<int>(arr);
+            var missing = new List<int>();
+            for (int i = 1; i <= N; i++)
+                if (!set.Contains(i)) missing.Add(i);
+            return missing;
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -129,6 +139,12 @@ namespace Adv_4
             employees.Add(2, "Hana");
             foreach (var emp in employees)
                 Console.WriteLine($"{emp.Key} : {emp.Value}");
+            #endregion
+
+            #region Q8 Find Missing Numbers from 1 to N
+            int[] arrQ8 = { 2, 3, 7, 4, 9 };
+            var missing = FindMissingNumbers(arrQ8, 10);
+            Console.WriteLine("Missing: " + string.Join(", ", missing));
             #endregion
         }
     }
