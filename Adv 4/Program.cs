@@ -102,6 +102,15 @@ namespace Adv_4
             return swapped;
         }
         #endregion
+
+        #region Q11  Union of Two Sets
+        static HashSet<int> UnionSets(HashSet<int> set1, HashSet<int> set2)
+        {
+            var union = new HashSet<int>(set1);
+            union.UnionWith(set2);
+            return union;
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -180,6 +189,15 @@ namespace Adv_4
             var swapped = SwapKeysAndValues(tableQ10);
             foreach (DictionaryEntry entry in swapped)
                 Console.WriteLine($"{entry.Key} : {entry.Value}");
+            #endregion
+
+            #region Q11
+            static HashSet<int> UnionSets(HashSet<int> set1, HashSet<int> set2)
+            {
+                var union = new HashSet<int>(set1);
+                union.UnionWith(set2);
+                return union;
+            }
             #endregion
         }
     }
