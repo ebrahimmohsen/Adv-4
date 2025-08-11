@@ -121,6 +121,15 @@ namespace Adv_4
             students.Remove(103);
             Console.WriteLine("Student 101: " + students[101]);
             #endregion
+
+            #region Q7 Employee Directory with SortedList
+            var employees = new SortedList<int, string>();
+            employees.Add(3, "Ali");
+            employees.Add(1, "Sara");
+            employees.Add(2, "Hana");
+            foreach (var emp in employees)
+                Console.WriteLine($"{emp.Key} : {emp.Value}");
+            #endregion
         }
     }
 }
