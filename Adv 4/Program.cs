@@ -112,6 +112,15 @@ namespace Adv_4
             int[] arrQ5 = { 1, 2, 3, 1 };
             Console.WriteLine("Contains duplicates: " + ContainsDuplicates(arrQ5));
             #endregion
+
+            #region Q6 SortedDictionary for Students
+            var students = new SortedDictionary<int, string>();
+            students.Add(101, "Ahmed");
+            students.Add(103, "Laila");
+            students[102] = "Omar";
+            students.Remove(103);
+            Console.WriteLine("Student 101: " + students[101]);
+            #endregion
         }
     }
 }
