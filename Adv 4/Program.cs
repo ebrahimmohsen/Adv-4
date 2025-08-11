@@ -36,6 +36,22 @@ namespace Adv_4
             return maxKey;
         }
         #endregion
+
+        #region Q3 Find Keys for Specific TargetValue
+        static void FindKeysForValue(Hashtable table, string targetValue)
+        {
+            bool found = false;
+            foreach (DictionaryEntry entry in table)
+            {
+                if ((string)entry.Value == targetValue)
+                {
+                    Console.WriteLine(entry.Key);
+                    found = true;
+                }
+            }
+            if (!found) Console.WriteLine("Key not found");
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1 Count Frequency of Each Element
@@ -50,6 +66,16 @@ namespace Adv_4
                 { "B", 10 },
                 { "C", 7 }
             };
+            #endregion
+
+            #region Q3 Find Keys for Specific TargetValue
+            Hashtable tableQ3 = new Hashtable()
+            {
+                { "key1", "apple" },
+                { "key2", "banana" },
+                { "key3", "apple" }
+            };
+            FindKeysForValue(tableQ3, "apple");
             #endregion
         }
     }
